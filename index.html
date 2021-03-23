@@ -4,9 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KRA Calc</title>
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
+
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #da763c;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">KRA Calculator</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Tax Band</th>
+                        <th scope="col">Rate of Tax</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">On the first KShs 24,000 per month or KShs 288,000 per annum</th>
+                        <td>10%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">On the next KShs 8,333 per month or KShs 100,000 per annum</th>
+                        <td>25%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">On all income amounts in excess of KShs 32,333 per month or KShs 388,000 per annum</th>
+                        <td>30%</td>
+                      </tr>
+                      <tr>
+                          <td colspan="3" class="text-center">Personal Relief: KES 2,400.00 per month</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+   
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-header text-center">
+                        <h5> PAYE Calculator </h5>
+                    </div>
+                    <div class="card-body">
+                        <form class="row g-3" onsubmit="return false">
+                            <div class="col-md-12">
+                                <label class="form-label">Gross Salary</label>
+                                <input type="number" class="form-control" id="gross_salary" placeholder="Enter Your Gross Salary">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">NHIF</label>
+                                <input type="number" class="form-control" id="NHIF" placeholder="Enter Your National Health Insuarance Fund">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">NSSF</label>
+                                <input type="number" class="form-control" id="NSSF" placeholder="Enter Your National Social Security Fund">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Other Deductions</label>
+                                <input type="number" class="form-control" id="other" placeholder="Enter Your Other Deductions">
+                            </div>
+                            <div class="col-12">
+                                <button type="button" onclick="calculate();" style="background-color: #da763c; border:none; color: white;" class="btn">Calculate</button>
+                                <button type="reset" class="btn" style="background-color: #da763c; border:none; color:white; ">Reset</button>
+                            </div>  
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-header text-center">
+                        <h5> Your Results </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-footer text-muted" id="result_footer">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
